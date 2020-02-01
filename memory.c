@@ -1,6 +1,8 @@
 #include "memory.h"
 #include <stdlib.h>
 
+// The actual memory of the Gameboy. Addresses are 16-bits and each address
+// hold 8-bits
 uint8_t *memory;
 
 void memInit()
