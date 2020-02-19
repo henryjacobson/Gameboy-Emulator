@@ -13,6 +13,7 @@ typedef struct {
 
 // The current state of the registers of the CPU
 CPUState* state;
+int halt;
 
 void CPUStateInit()
 {
@@ -23,11 +24,13 @@ void CPUStateInit()
 
 	state->SP = 0;
 	state->PC = 0x100;
+
+	halt = 0;
 }
 
 void haltCPU()
 {
-
+	halt = 1;
 }
 
 void CPU()
@@ -44,7 +47,8 @@ void CPU()
 
 		execute(instr, &cycles);
 
-		break;
+		if(halt)
+			break;
 	}
 }
 

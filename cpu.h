@@ -4,9 +4,10 @@
 #include "memory.h"
 #include <stdint.h>
 
-
+// Actrually runs the CPU until powered off.
 void CPU();
 
+// Stops the execution of the CPU.
 void haltCPU();
 
 // --- Register Gets ---
