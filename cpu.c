@@ -74,9 +74,9 @@ uint16_t HL() {return (((uint16_t) H()) << 8) | L();}
 uint16_t imm8() {return readMem(PC());}
 int16_t signedImm8() {return readMem(PC());}
 uint16_t imm16() {uint16_t first = imm8(); char sec = imm8();
-	return (first << 8) | sec;}
-uint16_t imm16LSB() {uint16_t first = imm8(); char sec = imm8();
 	return (sec << 8) | first;}
+uint16_t imm16LSB() {uint16_t first = imm8(); char sec = imm8();
+	return (first << 8) | sec;}
 
 // --- Flag Gets ---
 
